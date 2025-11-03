@@ -60,13 +60,18 @@ void MyRespondToCommand(int32_t current_time, const char* found_command,
   if (!is_new_command) return;
 
   String cmd = String(found_command);
-  if (cmd == "YES" || cmd == "NO") {
+  String display_text = "";
+
+  if (cmd == "YES") display_text = "VERDE";
+  else if (cmd == "NO") display_text = "VERMELHO";
+
+  if (display_text != "") {
     last_command = cmd;
     lcd.clear();
     lcd.setCursor(0, 0);
-    lcd.print("Command:");
+    lcd.print("Comando:");
     lcd.setCursor(0, 1);
-    lcd.print(cmd);
+    lcd.print(display_text);
   }
 }
 
@@ -83,7 +88,7 @@ void setup() {
   lcd.init();
   lcd.backlight();
   lcd.setCursor(0, 0);
-  lcd.print("Waiting...");
+  lcd.print("Aguardando...");
 
   // Carregar modelo original do Arduino MicroSpeech
   model = tflite::GetModel(g_micro_model_data);
@@ -151,3 +156,4 @@ void loop() {
 
   if (last_command != "") update_leds_effect();
 }
+
