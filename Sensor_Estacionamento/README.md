@@ -5,10 +5,10 @@ This project simulates a car reverse parking sensor using an Arduino, an ultraso
 * Circuit Photo:** A photo/diagram of the circuit assembly is available on this page.
 
 ## Components
-* **1x Arduino Board** (Uno, Nano, etc.)
+* **1x Arduino Board** (Miuzei brand is what i habe)
 * **1x HC-SR04** Ultrasonic Sensor
 * **6x LEDs** (2 Green, 2 Yellow, 2 Red)
-* **6x Resistors** (220Ω or 330Ω)
+* **6x Resistors** (220Ω)
 * **Jumper Wires & Breadboard**
 
 ## How it Works
